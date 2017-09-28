@@ -2,12 +2,11 @@ FROM opensuse
 MAINTAINER Jason Evans <jevans@suse.com>
 
 # add bbs user
-useradd bbs
+RUN useradd bbs
 
 # add user files
 ADD passwd /etc/
-ADD shadow /tmp
-RUN cat /tmp/shadow >> /etc/shadow
+ADD shadow /etc
 
 # add bbs files
 ADD bbs.py /
@@ -16,7 +15,7 @@ ADD epub.py /
 
 # add dependancies
 
-RUN zypper ref && zypper in python-beautifulsoup4 python-curses openssh
+RUN zypper ref && zypper --non-interactive in python-beautifulsoup4 python-curses openssh
 RUN sshd-gen-keys-start
+RUN /usr/sbin/sshd 
 
-CMD sshd 
