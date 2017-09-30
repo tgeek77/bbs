@@ -17,6 +17,7 @@ ADD epub.py /
 
 RUN zypper ref && zypper --non-interactive in python-beautifulsoup4 python-curses openssh
 RUN sshd-gen-keys-start
-RUN /usr/sbin/sshd
-CMD python bbs.py
 
+EXPOSE 22
+
+CMD    ["/usr/sbin/sshd", "-D"]
