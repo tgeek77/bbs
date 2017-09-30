@@ -24,7 +24,7 @@ def execute_cmd(cmd_string):
 
 x = 0
 
-while x != ord('4'):
+while x != ord('5'):
 	screen = curses.initscr()
 
 	screen.clear()
@@ -32,21 +32,25 @@ while x != ord('4'):
 	screen.addstr(2, 2, "Please enter a number...")
 	screen.addstr(4, 4, "1 - Read a Book")
 	screen.addstr(5, 4, "2 - Play Worm")
-	screen.addstr(6, 4, "3 - User the Internet")
-	screen.addstr(7, 4, "4 - Exit")
+	screen.addstr(6, 4, "3 - Enter the Chan")
+	screen.addstr(7, 4, "4 - Enter the BBS")
+	screen.addstr(7, 4, "5 - Exit")
 	screen.refresh()
 
 	x = screen.getch()
 
 	if x == ord('1'):
 		curses.endwin()
-		execute_cmd("/usr/local/bin/hello")
+		execute_cmd("/ebookmenu.py /books")
 	if x == ord('2'):
 		curses.endwin()
-		execute_cmd("/usr/bin/worm")
+		execute_cmd("/gamemenu.py")
 	if x == ord('3'):
 		curses.endwin()
 		execute_cmd("/usr/bin/links")
+	if x == ord('4'):
+		curses.endwin()
+		execute_cmd("telnet bbs")		
 
 curses.endwin()
 
