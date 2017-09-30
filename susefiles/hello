@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "hello world"
-/usr/bin/less /books/1400.txt
