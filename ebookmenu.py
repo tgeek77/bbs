@@ -23,8 +23,8 @@ Originally by: Kragen Sitaker
 # inorder traversal, and defer operations on the current node until the next
 # time we're traversing.
 
+
 import curses.wrapper, time, random, cgitb, os, sys
-from os import system
 cgitb.enable(format="text")
 ESC = 27
 result = ''
@@ -144,19 +144,6 @@ def restore_stdio((saved_stdin, saved_stdout)):
     os.dup(saved_stdin)
     os.dup(saved_stdout)
 
-def execute_cmd(cmd_string):
-	system("clear")
-	a = system(cmd_string)
-	print ""
-	if a == 0:
-		print "Command executed correctly"
-	else:
-		print "Command terminated with error"
-	raw_input("Press enter")
-	print ""
-
-x = 0
-
 if __name__ == '__main__':
     global start
     if len(sys.argv) > 1:
@@ -164,5 +151,4 @@ if __name__ == '__main__':
     saved_fds = open_tty()
     try: curses.wrapper(main)
     finally: restore_stdio(saved_fds)
-    system("/usr/local/bin/epub.py " + "/books/" + result) 
-    #print result
+    print result
