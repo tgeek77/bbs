@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM opensuse
 MAINTAINER Jason Evans <jevans@suse.com>
 
 # add bbs user
@@ -15,8 +15,9 @@ ADD epub.py /
 
 # add dependancies
 
-RUN apt-get update && apt-get install -y python-pip openssh-server
-RUN pip install beautifulsoup4 curses-ui
-RUN mkdir /var/run/sshd
-CMD /usr/sbin/sshd
+RUN zypper ref && zypper --non-interactive in python-beautifulsoup4 python-curses openssh
+RUN sshd-gen-keys-start
 
+EXPOSE 22
+
+CMD    ["/usr/sbin/sshd", "-D"]
