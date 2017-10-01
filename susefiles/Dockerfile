@@ -10,12 +10,11 @@ ADD shadow /etc
 
 # add bbs files
 ADD bbs.py /
-ADD hello /
 ADD epub.py /
 
 # add dependancies
 
-RUN zypper ref && zypper --non-interactive in python-beautifulsoup4 python-curses openssh
+RUN zypper ref && zypper --non-interactive in python-beautifulsoup4 python-curses openssh bsd-games links
 RUN sshd-gen-keys-start
 
 EXPOSE 22

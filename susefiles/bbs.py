@@ -40,13 +40,13 @@ while x != ord('4'):
 
 	if x == ord('1'):
 		curses.endwin()
-		execute_cmd("/usr/local/bin/hello")
+		execute_cmd("/epub.py /books/book_gnomeuser.epub")
 	if x == ord('2'):
 		curses.endwin()
 		execute_cmd("/usr/bin/worm")
 	if x == ord('3'):
 		curses.endwin()
-		execute_cmd("/usr/bin/links")
+		execute_cmd("links")
 
 curses.endwin()
 
