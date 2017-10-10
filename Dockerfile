@@ -6,7 +6,7 @@ RUN useradd bbs
 
 # add user files
 ADD passwd /etc/
-ADD shadow /etc
+ADD shadow /etc/
 
 # add bbs files
 ADD bbs.py /
