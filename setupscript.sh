@@ -27,6 +27,9 @@ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 
 apt update && apt install tor deb.torproject.org-keyring -y
 
+echo "HiddenServiceDir /var/lib/tor/hidden_service/" >> /etc/tor/torrc
+echo "HiddenServicePort 22 127.0.0.1:22" >> /etc/tor/torrc
+
 ## setup salt-minion
 echo "10.0.1.110  salt jserver" >> /etc/hosts
 apt install salt-minion -y
