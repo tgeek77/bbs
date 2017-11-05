@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## create bbs user
-adduser bbs
+useradd bbs
 
 ## Setup Docker
  apt-get install \
