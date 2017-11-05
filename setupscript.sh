@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## create bbs user
+adduser bbs
+
 ## Setup Docker
  apt-get install \
   apt-transport-https \
