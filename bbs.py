@@ -34,23 +34,26 @@ while x != ord('5'):
 	screen.addstr(5, 4, "2 - Play Worm")
 	screen.addstr(6, 4, "3 - Enter the Chan")
 	screen.addstr(7, 4, "4 - Enter the BBS")
-	screen.addstr(7, 4, "5 - Exit")
+	screen.addstr(8, 4, "5 - Exit")
 	screen.refresh()
 
 	x = screen.getch()
 
 	if x == ord('1'):
 		curses.endwin()
-		execute_cmd("/ebookmenu.py /books")
+		execute_cmd("/opt/ebookmenu.py /books")
 	if x == ord('2'):
 		curses.endwin()
-		execute_cmd("/gamemenu.py")
+		execute_cmd("/opt/gamemenu.py")
 	if x == ord('3'):
 		curses.endwin()
 		execute_cmd("/usr/bin/links")
 	if x == ord('4'):
 		curses.endwin()
-		execute_cmd("telnet bbs")		
+		execute_cmd("echo "coming soon"")
+	if x == ord('5'):
+		curses.endwin()
+		execute_cmd("exit")
 
 curses.endwin()
 
