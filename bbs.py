@@ -41,16 +41,16 @@ while x != ord('5'):
 
 	if x == ord('1'):
 		curses.endwin()
-		execute_cmd("/opt/ebookmenu.py /books")
+		execute_cmd("/opt/bbs/epub.py /opt/bbs/cheese.epub")
 	if x == ord('2'):
 		curses.endwin()
-		execute_cmd("/opt/gamemenu.py")
+		execute_cmd("worm")
 	if x == ord('3'):
 		curses.endwin()
 		execute_cmd("/usr/bin/links")
 	if x == ord('4'):
 		curses.endwin()
-		execute_cmd("echo "coming soon"")
+		execute_cmd("echo coming soon")
 	if x == ord('5'):
 		curses.endwin()
 		execute_cmd("exit")
